@@ -3,6 +3,8 @@
 # Define the library name and sources
 add_library(RayGuiLib
     src/RayGui++.cpp
+    src/Elements.cpp
+    src/Scene.cpp
     # Add more source files if needed
 )
 

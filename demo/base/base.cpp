@@ -11,17 +11,17 @@ void main() {
 
     font = GetFontDefault();
 
-    interface *_interface = new interface();
-    _interface->add(new textButton({25, 200, 175, 50}, WHITE, "Hello world", BLACK, [](){
+    Scene *_scene = new Scene();
+    _scene->add(new textButton({25, 200, 175, 50}, WHITE, "Hello world", BLACK, [](){
         std::cout << "Hello World !!!" << std::endl;
     }));
 
     while (!WindowShouldClose()) {
-        _interface->update();
+        _scene->update();
         BeginDrawing();
 
             ClearBackground(RAYWHITE);
-            _interface->draw();
+            _scene->draw();
 
         EndDrawing();
     }
