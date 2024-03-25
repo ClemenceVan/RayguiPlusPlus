@@ -1,0 +1,44 @@
+cmake_minimum_required(VERSION 3.10)
+project(RayGuiDemo)
+
+include(FetchContent)
+
+# Set the CMake installation directory
+set(CMAKE_INSTALL_PREFIX ${CMAKE_CURRENT_BINARY_DIR})
+
+# Define where the libraries will be installed
+set(LIBRARY_INSTALL_DIR ${CMAKE_CURRENT_BINARY_DIR}/bin)
+
+# Fetch raylib
+FetchContent_Declare(
+    raylib
+    GIT_REPOSITORY https://github.com/raysan5/raylib.git
+    GIT_TAG 3.7.0 # or any specific version you want
+)
+
+# Make sure to populate the raylib variable
+FetchContent_MakeAvailable(raylib)
+
+# Set the source directories
+set(RayGuipp_SOURCE_DIR ${CMAKE_CURRENT_SOURCE_DIR}/RayGui++)
+
+# Include RayGui++ as a subdirectory
+add_subdirectory(${RayGuipp_SOURCE_DIR})
+
+# Execute the CMakeLists.txt file in the demo directory
+add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/demo ${CMAKE_CURRENT_BINARY_DIR}/demo_build)
+
+# Add the include directories for raylib and RayGui++
+include_directories(${RayGuipp_SOURCE_DIR}/includes)
+
+# CMakeLists.txt in demo/demo1
+
+# Add the executable for demo1
+add_executable(demo1 
+    ./demo/base/base.cpp
+)
+
+# Link raylib and RayGui++ libraries to demo1
+target_link_libraries(demo1 PRIVATE raylib RayGuiLib) # Link with RayGuiLib target
+
+# Make sure to replace "RayGuiLib" with the correct target name if it's different
