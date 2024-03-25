@@ -20,13 +20,13 @@ At present, RayGUI++ is in its early stages, with basic functionality being deve
 
 ## Getting Involved:
 
-- **Contributing:** We welcome contributions from the community! Whether it's bug fixes, new features, or improvements to documentation, your contributions help make RayGUI++ better for everyone. See our [contribution guidelines](contribution-guidelines-link) for more information on how to get involved.
+- **Contributing:** We welcome contributions from the community! Whether it's bug fixes, new features, or improvements to documentation, your contributions help make RayGUI++ better for everyone. See our [contribution guidelines](contribution-guidelines-link) (TBA) for more information on how to get involved.
   
-- **Feedback:** We value your feedback! If you have suggestions, feature requests, or encounter issues, please open an issue on our [issue tracker](issue-tracker-link).
+- **Feedback:** We value your feedback! If you have suggestions, feature requests, or encounter issues, please open an issue on our [issue tracker](issue-tracker-link) (TBA).
 
 ## License:
 
-RayGUI++ is released under the MIT License, allowing for both personal and commercial use with minimal restrictions. See the [LICENSE](license-link) file for details.
+RayGUI++ is released under the MIT License, allowing for both personal and commercial use with minimal restrictions. See the [LICENSE](./License) file for details.
 
 ## Links:
 
