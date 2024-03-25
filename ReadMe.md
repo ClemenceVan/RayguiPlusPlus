@@ -1,10 +1,10 @@
-# RayGUI++: Lightweight Immediate Mode GUI Library for Raylib
+# RayGUI++: Lightweight Retained Mode GUI Library for Raylib
 
-RayGUI++ is a lightweight, immediate mode graphical user interface (GUI) library designed specifically for use with the Raylib game development framework in C++. The project is heavily based on the RayGUI library but aims to provide immediate mode GUI capabilities for C++ projects.
+RayGUI++ is a lightweight, retained mode graphical user interface (GUI) library designed specifically for use with the Raylib game development framework in C++. The project is heavily based on the RayGUI library but aims to provide retained mode GUI capabilities for C++ projects.
 
 ## Project Vision:
 
-RayGUI++ aims to offer a simple and efficient solution for creating user interfaces in C++ projects using the Raylib framework. It follows the immediate mode GUI paradigm, allowing GUI elements to be drawn and updated directly within the application's rendering loop.
+RayGUI++ aims to offer a simple and efficient solution for creating user interfaces in C++ projects using the Raylib framework. It follows the retained mode GUI paradigm, allowing GUI elements to be created and maintained separately from the rendering loop. In this approach, UI elements persist and are managed throughout the application's lifetime. Updates to UI elements occur independently of rendering, allowing for a clear separation between UI state management and rendering processes.
 
 ## Planned Features:
 
@@ -27,9 +27,3 @@ At present, RayGUI++ is in its early stages, with basic functionality being deve
 ## License:
 
 RayGUI++ is released under the MIT License, allowing for both personal and commercial use with minimal restrictions. See the [LICENSE](./License) file for details.
-
-## Links:
-
-- Issue Tracker: [issue-tracker-link]
-
-Join us on our journey to create a simple and efficient immediate mode GUI library for C++ projects with RayGUI++!
