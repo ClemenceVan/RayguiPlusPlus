@@ -6,10 +6,7 @@ Font font;
 
 void main() {
     InitWindow(800, 450, "RayGui++ Basic example");
-
     SetTargetFPS(60);
-
-    font = GetFontDefault();
 
     Scene *_scene = new Scene();
     _scene->add(new textButton({25, 200, 175, 50}, WHITE, "Hello world", BLACK, [](){

@@ -13,7 +13,7 @@ class text : public RayGuipp {
     void setText(std::string text);
 };
 
-class textbox : public RayGuipp {
+class textBox : public RayGuipp {
   private:
     std::string _prompt;
     std::string _text = "";
@@ -21,8 +21,8 @@ class textbox : public RayGuipp {
     Color _box_color;
     std::function<void(std::string)> _callback;
   public:
-    textbox(Rectangle size, Color box_color, Color text_color, std::function<void(std::string)> callback, std::string prompt = "prompt");
-    ~textbox();
+    textBox(Rectangle size, Color box_color, Color text_color, std::function<void(std::string)> callback, std::string prompt = "prompt");
+    ~textBox();
     void draw();
     void update();
     bool maj();

@@ -41,4 +41,6 @@ add_executable(demo1
 # Link raylib and RayGui++ libraries to demo1
 target_link_libraries(demo1 PRIVATE raylib RayGuiLib) # Link with RayGuiLib target
 
-# Make sure to replace "RayGuiLib" with the correct target name if it's different
+# Move the compiled demo and library to ./bin
+set_target_properties(demo1 PROPERTIES RUNTIME_OUTPUT_DIRECTORY ${LIBRARY_INSTALL_DIR})
+set_target_properties(RayGuiLib PROPERTIES LIBRARY_OUTPUT_DIRECTORY ${LIBRARY_INSTALL_DIR})

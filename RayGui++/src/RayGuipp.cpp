@@ -6,6 +6,18 @@ RayGuipp::RayGuipp(Rectangle size) {
     _size = size;
 }
 
+void RayGuipp::setParent(Scene *parent) {
+    this->_parent = parent;
+}
+
+Scene *RayGuipp::getParent() {
+    return _parent;
+}
+
+Font RayGuipp::getFont() {
+    return _parent->getFont();
+}
+
 /* Getters and setters */
 Rectangle RayGuipp::getSize() {
     return _size;

@@ -12,8 +12,8 @@ text::~text() {
     // Text elements don't require destruction
 }
 
-void text::draw(){
-    DrawTextEx(font, _text.c_str(), Vector2{getSize().x, getSize().y}, getSize().width, getSize().height, _color);
+void text::draw() {
+    DrawTextEx(getFont(), _text.c_str(), Vector2{getSize().x, getSize().y}, getSize().width, getSize().height, _color);
 }
 
 void text::update() {
@@ -26,25 +26,25 @@ void text::setText(std::string text) {
 
 
 
-// textbox class implementation
+// textBox class implementation
 
-textbox::textbox(Rectangle size, Color box_color, Color text_color, std::function<void(std::string)> callback, std::string prompt) : RayGuipp(size) {
+textBox::textBox(Rectangle size, Color box_color, Color text_color, std::function<void(std::string)> callback, std::string prompt) : RayGuipp(size) {
     _text_color = text_color;
     _box_color = box_color;
     _callback = callback;
     _prompt = prompt;
 }
 
-textbox::~textbox() {
+textBox::~textBox() {
     // Textbox elements don't require destruction
 }
 
-void textbox::draw() {
+void textBox::draw() {
     DrawRectangleRec(getSize(), _box_color);
-    DrawTextEx(font, (_prompt + _text + (is_focused() ? "_" : "")).c_str(), Vector2{getSize().x + 4, getSize().y}, 25, 1, WHITE);
+    DrawTextEx(getFont(), (_prompt + _text + (is_focused() ? "_" : "")).c_str(), Vector2{getSize().x + 4, getSize().y}, 25, 1, WHITE);
 }
 
-void textbox::update() {
+void textBox::update() {
     if (is_focused()) {
         std::string tmp = handle_input();
         if (tmp != "")
@@ -52,11 +52,11 @@ void textbox::update() {
     }
 }
 
-bool textbox::maj() {
+bool textBox::maj() {
     return IsKeyDown(KEY_LEFT_SHIFT) || IsKeyDown(KEY_RIGHT_SHIFT);
 }
 
-std::string textbox::handle_input() {
+std::string textBox::handle_input() {
     int key = GetKeyPressed();
     std::string tmp;
     if (key == KEY_SPACE)
@@ -78,7 +78,7 @@ std::string textbox::handle_input() {
     return "";
 }
 
-std::string textbox::get_text() {
+std::string textBox::get_text() {
     return _text;
 }
 
@@ -104,7 +104,7 @@ std::string textButton::getText() {
 
 void textButton::draw() {
     DrawRectangleRec(getSize(), _box_color);
-    DrawTextEx(font, _text.c_str(), Vector2{getSize().x + 4, getSize().y + getSize().height - 25}, 25, 1, _text_color);
+    DrawTextEx(getFont(), _text.c_str(), Vector2{getSize().x + 4, getSize().y + getSize().height - 25}, 25, 1, _text_color);
 }
 
 void textButton::update() {

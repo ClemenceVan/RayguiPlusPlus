@@ -1,14 +1,14 @@
 #pragma once
 #include "RayGui++.hpp"
-
+class Scene;
 /**
  * @brief Class used to create an RayGuipp in the server
  * 
  */
 class RayGuipp {
   private:
-    // scene *parent;
     Rectangle _size;
+    Scene *_parent;
     bool _active = true;
     bool _focused = false;
     bool _hovered = false;
@@ -24,6 +24,9 @@ class RayGuipp {
     virtual void draw() = 0;
     virtual void update() = 0;
 
+    void setParent(Scene *parent);
+    Scene *getParent();
+    Font getFont();
     Rectangle getSize();
     bool isActive();
     void setActive(bool active);

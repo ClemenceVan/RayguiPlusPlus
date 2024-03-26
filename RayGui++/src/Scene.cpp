@@ -3,15 +3,22 @@
 
 // scene class implementation
 
-Scene::Scene() {}
+Scene::Scene() { // might add some optional parameters here like font
+    _font = GetFontDefault();
+}
 
 Scene::~Scene() {
     // for (auto& element : _elements) TO BE CHECKED IF NEEDED
     //     delete element;
 }
 
+Font Scene::getFont() {
+    return _font;
+}
+
 RayGuipp* Scene::add(RayGuipp* element) {
     _elements.push_back(element);
+    element->setParent(this);
     return element;
 }
 
